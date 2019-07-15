@@ -3,8 +3,8 @@ package com.epam.firsttask.action;
 public class ArraySummaryStatistics {
     private final int[] arrayOfIntegers;
 
-    public ArraySummaryStatistics(int[] array){
-        this.arrayOfIntegers = array;
+    public ArraySummaryStatistics(int[] arrayOfIntegers){
+        this.arrayOfIntegers = arrayOfIntegers;
     }
 
     public int getMinElementId(){

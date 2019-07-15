@@ -3,8 +3,8 @@ package com.epam.firsttask.init;
 import java.util.Random;
 
 public class RandomArrayInitializer {
-    public int[] init(){
+    public int[] perform(int arraySize, int minValue, int maxValue){
         Random random = new Random();
-        return random.ints(10, 0,100).toArray();
+        return random.ints(arraySize, minValue,maxValue).toArray();
     }
 }
