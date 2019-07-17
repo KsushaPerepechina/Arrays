@@ -1,6 +1,6 @@
-package com.epam.firsttask.writer;
+package com.epam.firsttask.printer;
 
-import com.epam.firsttask.reader.TxtFileReader;
+import com.epam.firsttask.reader.TextReader;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -9,19 +9,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class TxtFileWriter {
-    private static final Logger log = LogManager.getLogger(TxtFileReader.class);
-    private final String filePath;
+public class TextPrinter {
+    private static final Logger log = LogManager.getLogger(TextReader.class);
 
-    public TxtFileWriter(String filePath){
-        this.filePath = filePath;
-    }
-
-    public void writeLine(String outputLine){
+    public void writeLine(final String filePath, final String outputLine){
         try{
             Files.write(Paths.get(filePath), outputLine.getBytes(), StandardOpenOption.APPEND);
         } catch(IOException e){
-            e.printStackTrace();
             log.error(e.getMessage());
         }
     }

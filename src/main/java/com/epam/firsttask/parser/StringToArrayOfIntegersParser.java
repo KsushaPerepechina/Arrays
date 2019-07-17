@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class StringToArrayOfIntegersParser {
     public int[] transform(String inputString){
-        return Arrays.stream(inputString.split(" "))
+        return Arrays.stream(inputString.split("\\s+"))
                 .mapToInt(Integer::parseInt)
                 .toArray();
     }

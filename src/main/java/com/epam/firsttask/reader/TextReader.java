@@ -9,20 +9,14 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class TxtFileReader {
-    private static final Logger log = LogManager.getLogger(TxtFileReader.class);
-    private final String filePath;
+public class TextReader {
+    private static final Logger log = LogManager.getLogger(TextReader.class);
 
-    public TxtFileReader(String filePath) {
-        this.filePath = filePath;
-    }
-
-    public List<String> getAllLines(){
+    public List<String> readAllLines(final String filePath){
         List<String> fileContent = null;
         try{
             fileContent = Files.readAllLines(Paths.get(filePath), StandardCharsets.UTF_8);
         } catch (IOException e) {
-            e.printStackTrace();
             log.error(e.getMessage());
         }
         return fileContent;

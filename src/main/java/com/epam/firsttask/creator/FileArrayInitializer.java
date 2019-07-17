@@ -1,16 +1,16 @@
-package com.epam.firsttask.init;
+package com.epam.firsttask.creator;
 
 import com.epam.firsttask.parser.StringToArrayOfIntegersParser;
-import com.epam.firsttask.reader.TxtFileReader;
+import com.epam.firsttask.reader.TextReader;
 import com.epam.firsttask.validation.PositiveIntegersStringValidator;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileArrayInitializer{
-    public List<int[]> perform(String dataSourceFilePath){
-        TxtFileReader txtFileReader = new TxtFileReader(dataSourceFilePath);
-        List<String> fileContent = txtFileReader.getAllLines();
+    public List<int[]> execute(String dataSourceFilePath){
+        TextReader textReader = new TextReader();
+        List<String> fileContent = textReader.readAllLines(dataSourceFilePath);
 
         PositiveIntegersStringValidator positiveIntegersStringValidator = new PositiveIntegersStringValidator();
         StringToArrayOfIntegersParser stringToArrayOfIntegersParser = new StringToArrayOfIntegersParser();
