@@ -18,17 +18,22 @@ public class PositiveIntegerStringValidatorTest {
     }
 
     @Test
-    public void stringOfIntegersSeparatedByCommaTest(){
-        Assert.assertFalse(positiveIntegersStringValidator.isCorrect("34, 51, 18, 7, 96, 66"));
-    }
-
-    @Test
     public void stringOfIntegersSeparatedByOneOrMoreSpacesTest(){
         Assert.assertTrue(positiveIntegersStringValidator.isCorrect("34  51 18 7  96 66"));
     }
 
     @Test
+    public void stringOfIntegersSeparatedByCommaTest(){
+        Assert.assertFalse(positiveIntegersStringValidator.isCorrect("34, 51, 18, 7, 96, 66"));
+    }
+
+    @Test
     public void stringOfNotOnlyIntegersTest(){
+        Assert.assertFalse(positiveIntegersStringValidator.isCorrect("34 51.7 18 7 96 66"));
+    }
+
+    @Test
+    public void stringOfNotOnlyNumbersTest(){
         Assert.assertFalse(positiveIntegersStringValidator.isCorrect("34 51m 18 7 96/ 66"));
     }
 

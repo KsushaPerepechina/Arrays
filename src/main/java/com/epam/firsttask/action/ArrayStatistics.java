@@ -1,7 +1,7 @@
 package com.epam.firsttask.action;
 
 public class ArrayStatistics {
-    public int findMinElementId(final int[] arrayOfIntegers){
+    public int findMinElementId(final int[] arrayOfIntegers) {
         int minElementId = 0;
         for (int i = 1; i < arrayOfIntegers.length; i++) {
             if (arrayOfIntegers[i] < arrayOfIntegers[minElementId]) {
@@ -11,11 +11,11 @@ public class ArrayStatistics {
         return minElementId;
     }
 
-    public int findMinElementValue(final int[] arrayOfIntegers){
+    public int findMinElementValue(final int[] arrayOfIntegers) {
         return arrayOfIntegers[findMinElementId(arrayOfIntegers)];
     }
 
-    public int findMaxElementId(final int[] arrayOfIntegers){
+    public int findMaxElementId(final int[] arrayOfIntegers) {
         int maxElementId = 0;
         for (int i = 1; i < arrayOfIntegers.length; i++) {
             if (arrayOfIntegers[i] > arrayOfIntegers[maxElementId]) {
@@ -25,11 +25,11 @@ public class ArrayStatistics {
         return maxElementId;
     }
 
-    public int findMaxElementValue(final int[] arrayOfIntegers){
+    public int findMaxElementValue(final int[] arrayOfIntegers) {
         return arrayOfIntegers[findMaxElementId(arrayOfIntegers)];
     }
 
-    public int findElementsSum(final int[] arrayOfIntegers){
+    public int findElementsSum(final int[] arrayOfIntegers) {
         int sumOfElements = 0;
         for (int element: arrayOfIntegers) {
             sumOfElements += element;
